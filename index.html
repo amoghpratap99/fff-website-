@@ -545,7 +545,276 @@
   /* Reveal */
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Stats strip */
+  .stats {
+    padding: 4rem 1.5rem;
+    border-top: 1px solid rgba(232,185,35,0.15);
+    border-bottom: 1px solid rgba(232,185,35,0.15);
+    background: rgba(0,0,0,0.2);
+  }
+  .stats-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat-item .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-item .label {
+    color: rgba(232,223,201,0.7);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Programs (What We Do) */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .program-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 2.2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .program-card:hover {
+    border-color: rgba(232,185,35,0.4);
+    transform: translateY(-4px);
+  }
+  .program-num {
+    font-family: 'Pixelify Sans', monospace;
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+  }
+  .program-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.15;
+  }
+  .program-card p {
+    color: rgba(232,223,201,0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .program-card ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+  .program-card li {
+    color: rgba(232,223,201,0.65);
+    font-size: 0.9rem;
+    padding: 0.35rem 0 0.35rem 1.2rem;
+    position: relative;
+  }
+  .program-card li::before {
+    content: '→';
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  /* Impact tiers (donate) */
+  .impact-tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 0 auto 2.5rem;
+    max-width: 1000px;
+  }
+  .tier {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(232,185,35,0.18);
+    border-radius: 18px;
+    padding: 1.5rem 1.2rem;
+    text-align: left;
+  }
+  .tier .amt {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    color: var(--gold);
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+  .tier .desc {
+    color: rgba(232,223,201,0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Get Involved CTA */
+  .involve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .involve-card {
+    background: linear-gradient(180deg, rgba(232,185,35,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(232,185,35,0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .involve-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .involve-card h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.3rem;
+    margin: 0.8rem 0 0.6rem;
+  }
+  .involve-card p {
+    color: rgba(232,223,201,0.7);
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+  }
+  .involve-icon {
+    width: 56px; height: 56px;
+    margin: 0 auto;
+    border-radius: 14px;
+    background: rgba(232,185,35,0.15);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  /* Footer columns */
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2rem;
+    text-align: left;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-grid h4 {
+    color: var(--cream);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+  }
+  .footer-grid a {
+    display: block;
+    color: rgba(232,223,201,0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    transition: color 0.2s;
+  }
+  .footer-grid a:hover { color: var(--gold); }
+  .footer-grid p {
+    color: rgba(232,223,201,0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+  }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,15,36,0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1.5rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    border: 1px solid var(--gold);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: pop 0.3s ease;
+  }
+  @keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .modal h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .modal p {
+    color: rgba(232,223,201,0.75);
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+  .modal-close {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  .modal-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: rgba(232,185,35,0.15);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  /* Favicon container - small star/sparkle accent */
+  .hero-decor {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+    animation: spin 20s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
 </style>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1830'/%3E%3Ctext x='32' y='44' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' text-anchor='middle' fill='%23e8b923'%3EF%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
 
@@ -557,26 +826,49 @@
   <a href="#" class="logo">F<span>F</span>F</a>
   <div class="nav-links">
     <a href="#mission">Mission</a>
+    <a href="#programs">Programs</a>
     <a href="#about">Team</a>
     <a href="#events">Events</a>
-    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
   </div>
-  <a href="#donate" class="nav-cta">Support Us →</a>
+  <a href="#involve" class="nav-cta">Get Involved →</a>
 </nav>
 
 <main>
   <section class="hero">
-    <span class="hero-tag">🚀 Empowering the next generation</span>
+    <span class="hero-tag">A youth-led financial literacy initiative</span>
     <h1>
-      The future of <span class="grad">Gen Z wealth</span> starts here.
+      Building the future of <span class="grad">Gen Z wealth.</span>
     </h1>
     <p class="lead">
-      Financial literacy through games, tools & workshops — built by teens, for teens.
-      Real-world money skills that actually slap.
+      FFF empowers teens with real-world financial literacy
+      through workshops, interactive tools, and pitch competitions —
+      built by teens, for teens.
     </p>
     <div class="hero-ctas">
-      <a href="#donate" class="btn btn-primary">💸 Donate Now</a>
-      <a href="#mission" class="btn btn-ghost">Learn More ↓</a>
+      <a href="#programs" class="btn btn-primary">Explore Programs →</a>
+      <a href="#involve" class="btn btn-ghost">Get Involved</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="num">8</div>
+        <div class="label">Student Leaders</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">5+</div>
+        <div class="label">Schools Represented</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">100%</div>
+        <div class="label">Youth Led</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">2026</div>
+        <div class="label">Founded</div>
+      </div>
     </div>
   </section>
 
@@ -594,31 +886,87 @@
   <section id="mission">
     <div class="container reveal">
       <span class="section-eyebrow">// our mission</span>
-      <h2 class="section-title">Money skills.<br/>For real life.</h2>
+      <h2 class="section-title">Real money skills,<br/>for real life.</h2>
       <p class="section-sub">
-        We're empowering teens with real-world money skills through interactive
-        experiences that don't put you to sleep.
+        Most teens graduate high school without ever learning how to budget,
+        invest, or build credit. We're here to change that — through engaging,
+        accessible programs designed by the people who need them most.
       </p>
       <div class="mission-grid">
         <div class="mission-card">
           <span class="icon">🚀</span>
           <h3>Empower</h3>
-          <p>Teens with the financial knowledge schools forget to teach.</p>
+          <p>Equip teens with the financial knowledge traditional classrooms overlook.</p>
         </div>
         <div class="mission-card">
           <span class="icon">💸</span>
           <h3>Educate</h3>
-          <p>Through games, tools, and hands-on workshops that actually engage.</p>
+          <p>Deliver hands-on workshops, games, and tools that make learning stick.</p>
         </div>
         <div class="mission-card">
           <span class="icon">✨</span>
           <h3>Elevate</h3>
-          <p>The future of Gen Z wealth — one teen at a time.</p>
+          <p>Shape the next generation of financially confident young adults.</p>
         </div>
         <div class="mission-card">
           <span class="icon">🎯</span>
           <h3>Engage</h3>
-          <p>A community of young people building real-world money confidence together.</p>
+          <p>Build a community where teens learn, grow, and lead together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" style="background: rgba(0,0,0,0.2);">
+    <div class="container reveal">
+      <span class="section-eyebrow">// what we do</span>
+      <h2 class="section-title">Our programs.</h2>
+      <p class="section-sub">
+        Three core pillars that take financial literacy from textbook theory
+        to real-world skill.
+      </p>
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="program-num">01 / WORKSHOPS</div>
+          <h3>Interactive Workshops</h3>
+          <p>
+            Multi-day sessions covering the financial fundamentals every teen
+            should know before adulthood.
+          </p>
+          <ul>
+            <li>Budgeting & saving</li>
+            <li>Investing 101</li>
+            <li>Credit & debt</li>
+            <li>Taxes made simple</li>
+          </ul>
+        </div>
+        <div class="program-card">
+          <div class="program-num">02 / COMPETITION</div>
+          <h3>Pitch Competitions</h3>
+          <p>
+            Students develop real business ideas, build pitch decks, and
+            present to a panel of judges — winning cash prizes and mentorship.
+          </p>
+          <ul>
+            <li>Business model design</li>
+            <li>Public speaking</li>
+            <li>Financial projections</li>
+            <li>Real prizes & mentorship</li>
+          </ul>
+        </div>
+        <div class="program-card">
+          <div class="program-num">03 / COMMUNITY</div>
+          <h3>Outreach & Community</h3>
+          <p>
+            Free resources, school partnerships, and a peer network that turns
+            financial literacy into a movement, not a chore.
+          </p>
+          <ul>
+            <li>School chapter program</li>
+            <li>Free digital toolkits</li>
+            <li>Speaker & mentor network</li>
+            <li>Year-round events</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -629,8 +977,9 @@
       <span class="section-eyebrow">// who we are</span>
       <h2 class="section-title">Meet the team.</h2>
       <p class="section-sub">
-        FFF is led by a team of high school students from across the Houston area
-        who believe financial literacy shouldn't be reserved for adults in suits.
+        FFF is led by a board of high school students from across the
+        Greater Houston area, united by the belief that financial literacy
+        is a right — not a privilege.
       </p>
       <div class="team-grid">
         <div class="team-card">
@@ -690,93 +1039,115 @@
       <span class="section-eyebrow">// what's next</span>
       <h2 class="section-title">Upcoming events.</h2>
       <p class="section-sub">
-        We're cooking up some fire experiences. Stay tuned for dates — drop your
-        email in our Insta DMs to be the first to know.
+        Stay tuned — full schedules drop soon. Follow us on Instagram
+        <a href="https://instagram.com/fff.foundation" style="color:var(--gold);text-decoration:none;">@fff.foundation</a>
+        to be the first to know.
       </p>
       <div class="events-grid">
         <div class="event-card">
           <span class="badge">SUMMER 2026</span>
-          <h3>Summer Workshop ☀️</h3>
+          <h3>Summer Financial Literacy Workshop</h3>
           <p>
-            A multi-day deep-dive into budgeting, investing, credit, and
-            building real wealth as a teen. We're planning to host a summer
-            workshop — dates TBA.
+            A multi-day, in-person workshop covering budgeting, investing,
+            credit, and the financial fundamentals every teen needs.
+            Open to all Houston-area students — scholarships available.
           </p>
-          <div class="date-tag">📅 Dates coming soon</div>
+          <div class="date-tag">Dates to be announced</div>
         </div>
         <div class="event-card">
           <span class="badge">FLAGSHIP</span>
-          <h3>Pitch Competitions 🎤</h3>
+          <h3>FFF Pitch Competition</h3>
           <p>
-            Got a business idea? Pitch it. Build it. Win it. Our pitch comps
-            challenge teens to think like founders and learn to communicate
-            value like pros.
+            Our flagship event. Teams of students develop original business
+            ideas, build pitch decks, and present to a panel of judges for
+            cash prizes and mentorship opportunities.
           </p>
-          <div class="date-tag">📅 Dates coming soon</div>
+          <div class="date-tag">Dates to be announced</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="donate" style="background: rgba(0,0,0,0.25);">
+  <section id="involve">
     <div class="container reveal">
-      <div class="donate-box">
-        <span class="section-eyebrow">// support the mission</span>
-        <h2>Fund a future.</h2>
-        <p>
-          We're a 501(c)(3) nonprofit. Every dollar goes toward workshops,
-          materials, and free programming for teens who need it most.
-        </p>
-        <div class="amount-grid">
-          <button class="amount-btn" data-amount="10">$10</button>
-          <button class="amount-btn active" data-amount="25">$25</button>
-          <button class="amount-btn" data-amount="50">$50</button>
-          <button class="amount-btn" data-amount="100">$100</button>
+      <span class="section-eyebrow">// get involved</span>
+      <h2 class="section-title">Join the movement.</h2>
+      <p class="section-sub">
+        There are many ways to be part of building financial freedom for
+        the next generation.
+      </p>
+      <div class="involve-grid">
+        <div class="involve-card">
+          <div class="involve-icon">🎓</div>
+          <h3>Start a Chapter</h3>
+          <p>Bring FFF to your school. We'll help you launch and run programs on your campus.</p>
+          <a href="#contact" class="btn btn-ghost" style="font-size:0.85rem;padding:0.6rem 1.2rem;">Get Started</a>
         </div>
-        <input type="number" class="custom-amount" placeholder="Or enter custom amount ($)" min="1" />
-        <button class="donate-btn" onclick="handleDonate()">Donate 💛</button>
-        <div class="nonprofit-badge">🛡️ Tax-deductible · 501(c)(3) status</div>
+        <div class="involve-card">
+          <div class="involve-icon">🤝</div>
+          <h3>Partner With Us</h3>
+          <p>Businesses, mentors, and educators — collaborate on workshops, prizes, or sponsorships.</p>
+          <a href="#contact" class="btn btn-ghost" style="font-size:0.85rem;padding:0.6rem 1.2rem;">Reach Out</a>
+        </div>
+        <div class="involve-card">
+          <div class="involve-icon">📣</div>
+          <h3>Spread the Word</h3>
+          <p>Follow us on Instagram, share with friends, and help grow the movement.</p>
+          <a href="https://instagram.com/fff.foundation" class="btn btn-ghost" style="font-size:0.85rem;padding:0.6rem 1.2rem;">Follow Us</a>
+        </div>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer>
-  <a href="#" class="logo">F<span style="color:var(--cream);">F</span>F</a>
-  <div>Future of Financial Freedom</div>
-  <div class="socials">
-    <a href="https://instagram.com" aria-label="Instagram">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    </a>
-    <a href="mailto:hello@fff.org" aria-label="Email">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    </a>
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <a href="#" class="logo" style="font-size:1.8rem;">F<span style="color:var(--cream);">F</span>F</a>
+      <p style="margin-top:0.8rem;">
+        FFF is a youth-led student initiative empowering the next
+        generation through financial literacy.
+      </p>
+      <div class="socials" style="justify-content:flex-start;">
+        <a href="https://instagram.com/fff.foundation" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:contact@fff-foundation.org" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#mission">Mission</a>
+      <a href="#programs">Programs</a>
+      <a href="#about">Team</a>
+      <a href="#events">Events</a>
+    </div>
+    <div>
+      <h4>Get Involved</h4>
+      <a href="#involve">Start a Chapter</a>
+      <a href="#involve">Partner With Us</a>
+      <a href="https://instagram.com/fff.foundation">Follow Us</a>
+      <a href="mailto:contact@fff-foundation.org">Volunteer</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:contact@fff-foundation.org">contact@fff-foundation.org</a>
+      <a href="https://instagram.com/fff.foundation">@fff.foundation</a>
+      <p style="margin-top:0.8rem;font-size:0.85rem;">
+        Greater Houston Area, TX
+      </p>
+    </div>
   </div>
-  <div>© 2026 FFF. Built by teens, for teens.</div>
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:0.85rem;">
+    <div>© 2026 FFF. All rights reserved.</div>
+    <div>Student-led initiative · Built by teens, for teens.</div>
+  </div>
 </footer>
 
 <script>
-  // Amount buttons
-  const amountBtns = document.querySelectorAll('.amount-btn');
-  const customInput = document.querySelector('.custom-amount');
-  amountBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      amountBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      customInput.value = '';
-    });
-  });
-  customInput.addEventListener('input', () => {
-    amountBtns.forEach(b => b.classList.remove('active'));
-  });
-
-  function handleDonate() {
-    const active = document.querySelector('.amount-btn.active');
-    const custom = customInput.value;
-    const amount = custom || (active ? active.dataset.amount : '25');
-    alert(`Thanks for choosing to donate $${amount}! 💛\n\nDonation processing coming soon — connect a Stripe / GoFundMe link here.`);
-  }
-
   // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
